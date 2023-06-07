@@ -29,7 +29,10 @@ Route::post('/login-process',[LoginController::class,'login']);
 Route::middleware(['loginChecker'])->group(function () {
     Route::get('/dashboard',[MainController::class,'index']);
     Route::get('/google',[MainController::class,'google']);
+    Route::get('/facebook',[MainController::class,'facebook']);
+    Route::get('/supersale',[MainController::class,'supersale']);
     Route::post('/google-proceess',[MainController::class,'googleadd']);
+    Route::post('/facebook-proceess',[MainController::class,'facebookadd']);
     Route::get('/reviewDel/{id}',[MainController::class,'deleteReview']);
     Route::get('/logout', function (Request $request) {
         if($request->session()->has('USER')){

@@ -20,3 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::get('/review/google/all',[MainController::class,'googleApi']);
+
+Route::post('/record/',[MainController::class,'record']);
